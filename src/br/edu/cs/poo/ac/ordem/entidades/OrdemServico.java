@@ -1,6 +1,8 @@
 package br.edu.cs.poo.ac.ordem.entidades;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,6 +23,20 @@ public class OrdemServico {
 	private double valor;
 
 	public LocalDate getDataEstimadaEntrega() {
-		return dataHoraAbertura.getMinute() + dataHoraAbertura.getSecond() + prazoEmDias;
+		LocalDate dataAbertura = this.dataHoraAbertura.toLocalDate();
+		
+		return dataAbertura.plusDays(this.prazoEmDias);
+	}
+	
+	public String getNumero() {
+		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMyyyyddHHmm");
+		
+		String dataFormatada = this.dataHoraAbertura.format(dateTimeFormatter);
+		
+		if (cliente.getCpfCnpj().length() == 11) {
+			return dataFormatada + this.cliente.getCpfCnpj();
+		} else {
+			return dataFormatada + "000" + this.cliente.getCpfCnpj();
+		}
 	}
 }

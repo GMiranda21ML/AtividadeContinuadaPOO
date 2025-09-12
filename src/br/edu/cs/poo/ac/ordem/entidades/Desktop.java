@@ -12,5 +12,3 @@ import lombok.Setter;
 public class Desktop extends Equipamento {
 	private boolean ehServidor;
 }
-
-
