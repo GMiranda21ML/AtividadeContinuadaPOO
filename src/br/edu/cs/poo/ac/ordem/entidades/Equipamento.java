@@ -11,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Equipamento {
 	private String descricao;
+	private Dificuldade dificuldade;
 	private boolean ehNovo;
 	private double valorEstimado;
 	

@@ -9,12 +9,12 @@ public enum PrecoBase {
 	UPGRADE_DIFICIL(TipoOrdem. UPGRADE, Dificuldade.DIFICIL, 110.00);
 	
 	private TipoOrdem tipoOrdem;
-	private Dificuldade tipoEquipamento;
+	private Dificuldade dificuldade;
 	private double preco;
 	
 	private PrecoBase(TipoOrdem tipoOrdem, Dificuldade tipoEquipamento, double preco) {
 		this.tipoOrdem = tipoOrdem;
-		this.tipoEquipamento = tipoEquipamento;
+		this.dificuldade = tipoEquipamento;
 		this.preco = preco;
 	}
 
@@ -22,8 +22,8 @@ public enum PrecoBase {
 		return tipoOrdem;
 	}
 
-	public Dificuldade getTipoEquipamento() {
-		return tipoEquipamento;
+	public Dificuldade getDificuldade() {
+		return dificuldade;
 	}
 
 	public double getPreco() {
@@ -33,7 +33,7 @@ public enum PrecoBase {
 
 	public static PrecoBase getPrecoBase(TipoOrdem tipoOrdem, Dificuldade dificuldade) {
 		for (PrecoBase precoBase : PrecoBase.values()) {
-			if (precoBase.tipoOrdem == tipoOrdem && precoBase.tipoEquipamento == dificuldade) {
+			if (precoBase.tipoOrdem == tipoOrdem && precoBase.dificuldade == dificuldade) {
 				return precoBase;
 			}
 		}

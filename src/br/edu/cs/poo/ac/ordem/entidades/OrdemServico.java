@@ -33,7 +33,7 @@ public class OrdemServico {
 		
 		String dataFormatada = this.dataHoraAbertura.format(dateTimeFormatter);
 		
-		if (cliente.getCpfCnpj().length() == 11) {
+		if (cliente.getCpfCnpj().length() == 15) {
 			return dataFormatada + this.cliente.getCpfCnpj();
 		} else {
 			return dataFormatada + "000" + this.cliente.getCpfCnpj();
