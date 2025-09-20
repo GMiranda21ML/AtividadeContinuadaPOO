@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Equipamento {
+	private String serial;
 	private String descricao;
-	private Dificuldade dificuldade;
 	private boolean ehNovo;
 	private double valorEstimado;
 	

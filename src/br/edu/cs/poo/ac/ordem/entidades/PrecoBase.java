@@ -12,9 +12,9 @@ public enum PrecoBase {
 	private Dificuldade dificuldade;
 	private double preco;
 	
-	private PrecoBase(TipoOrdem tipoOrdem, Dificuldade tipoEquipamento, double preco) {
+	private PrecoBase(TipoOrdem tipoOrdem, Dificuldade dificuldade, double preco) {
 		this.tipoOrdem = tipoOrdem;
-		this.dificuldade = tipoEquipamento;
+		this.dificuldade = dificuldade;
 		this.preco = preco;
 	}
 

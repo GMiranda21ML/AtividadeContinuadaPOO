@@ -33,10 +33,17 @@ public class OrdemServico {
 		
 		String dataFormatada = this.dataHoraAbertura.format(dateTimeFormatter);
 		
-		if (cliente.getCpfCnpj().length() == 15) {
-			return dataFormatada + this.cliente.getCpfCnpj();
+		String idTipo;
+		if (this.notebook != null) {
+			idTipo = this.notebook.getIdTipo();
 		} else {
-			return dataFormatada + "000" + this.cliente.getCpfCnpj();
+			idTipo = this.desktop.getIdTipo();
+		}
+		
+		if (cliente.getCpfCnpj().length() == 15) {
+			return idTipo +  dataFormatada + this.cliente.getCpfCnpj();
+		} else {
+			return idTipo + dataFormatada + "000" + this.cliente.getCpfCnpj();
 		}
 	}
 }

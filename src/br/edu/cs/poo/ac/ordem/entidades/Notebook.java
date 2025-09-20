@@ -7,10 +7,17 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Notebook extends Equipamento {
 	private boolean carregaDadosSensiveis;
+
+	public Notebook(boolean carregaDadosSensiveis) {
+		super();
+		this.carregaDadosSensiveis = carregaDadosSensiveis;
+	}
+	
+	public String getIdTipo() {
+		return "NO";
+	}
 }
 
 

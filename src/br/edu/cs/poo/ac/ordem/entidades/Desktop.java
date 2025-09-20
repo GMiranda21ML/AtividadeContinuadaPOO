@@ -7,8 +7,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Desktop extends Equipamento {
 	private boolean ehServidor;
+
+	public Desktop(boolean ehServidor) {
+		super();
+		this.ehServidor = ehServidor;
+	}
+	
+	public String getIdTipo() {
+		return "NE";
+	}
 }
