@@ -10,7 +10,7 @@ import lombok.Setter;
 public class Desktop extends Equipamento {
 	private boolean ehServidor;
 
-	public Desktop(boolean ehServidor) {
+	public Desktop(String serial, String descricao, boolean ehNovo, double valorEstimado, boolean ehServidor) {
 		super();
 		this.ehServidor = ehServidor;
 	}
