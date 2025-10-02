@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TesteValidadorCPFCNPJ {
 
-    // CPF v√°lido: 52998224725
+    // CPF v·lido: 52998224725
     @Test
     public void testeCPFValido() {
         ResultadoValidacaoCPFCNPJ resultado = ValidadorCPFCNPJ.validarCPFCNPJ("52998224725");
@@ -39,7 +39,7 @@ public class TesteValidadorCPFCNPJ {
         assertEquals(ErroValidacaoCPFCNPJ.CPF_CNPJ_NAO_E_CPF_NEM_CNPJ, resultado.getErroValidacao());
     }
 
-    // CNPJ v√°lido: 11444777000161
+    // CNPJ v·lido: 11444777000161
     @Test
     public void testeCNPJValido() {
         ResultadoValidacaoCPFCNPJ resultado = ValidadorCPFCNPJ.validarCPFCNPJ("11444777000161");

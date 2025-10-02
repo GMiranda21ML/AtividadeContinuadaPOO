@@ -11,7 +11,7 @@ public class Desktop extends Equipamento {
 	private boolean ehServidor;
 
 	public Desktop(String serial, String descricao, boolean ehNovo, double valorEstimado, boolean ehServidor) {
-		super();
+		super(serial, descricao, ehNovo, valorEstimado);
 		this.ehServidor = ehServidor;
 	}
 	
