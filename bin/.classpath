@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/PersistenciaObjetos.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/lombok-1.18.40.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/swt/swt.jar"/>
+	<classpathentry kind="lib" path="swing2swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -12,11 +12,10 @@ import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
 
-// Imports necessários para a lógica
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import javax.swing.JOptionPane; // Simples para pop-ups
+import javax.swing.JOptionPane;
 import br.edu.cs.poo.ac.ordem.entidades.Cliente;
 import br.edu.cs.poo.ac.ordem.entidades.Contato;
 import br.edu.cs.poo.ac.ordem.mediators.ClienteMediator;
