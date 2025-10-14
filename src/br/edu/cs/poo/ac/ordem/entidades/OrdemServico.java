@@ -41,7 +41,7 @@ public class OrdemServico implements Serializable {
 			idTipo = this.desktop.getIdTipo();
 		}
 		
-		if (cliente.getCpfCnpj().length() == 15) {
+		if (cliente.getCpfCnpj().length() == 14) {
 			return idTipo +  dataFormatada + this.cliente.getCpfCnpj();
 		} else {
 			return idTipo + dataFormatada + "000" + this.cliente.getCpfCnpj();
