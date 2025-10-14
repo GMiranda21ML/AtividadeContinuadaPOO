@@ -16,6 +16,6 @@ public class Desktop extends Equipamento {
 	}
 	
 	public String getIdTipo() {
-		return "NE";
+		return "DE";
 	}
 }

@@ -18,15 +18,15 @@ import br.edu.cs.poo.ac.ordem.mediators.ResultadoMediator;
 import br.edu.cs.poo.ac.utils.ListaString;
 
 public class TesteEquipamentoMediator extends TesteAbstrato {
-	private static final String SERIAL_DO_NOTEBOOK_NAO_EXISTENTE = "Serial do notebook n„o existente";
-	private static final String SERIAL_DO_DESKTOP_NAO_EXISTENTE = "Serial do desktop n„o existente";
-	private static final String ID_DO_TIPO_SERIAL_DO_NOTEBOOK_NAO_INFORMADO = "Id do tipo + serial do notebook n„o informado";
-	private static final String ID_DO_TIPO_SERIAL_DO_DESKTOP_NAO_INFORMADO = "Id do tipo + serial do desktop n„o informado";
+	private static final String SERIAL_DO_NOTEBOOK_NAO_EXISTENTE = "Serial do notebook n√£o existente";
+	private static final String SERIAL_DO_DESKTOP_NAO_EXISTENTE = "Serial do desktop n√£o existente";
+	private static final String ID_DO_TIPO_SERIAL_DO_NOTEBOOK_NAO_INFORMADO = "Id do tipo + serial do notebook n√£o informado";
+	private static final String ID_DO_TIPO_SERIAL_DO_DESKTOP_NAO_INFORMADO = "Id do tipo + serial do desktop n√£o informado";
 	private static final String VALOR_ESTIMADO_MENOR_OU_IGUAL_A_ZERO = "Valor estimado menor ou igual a zero";
-	private static final String SERIAL_NAO_INFORMADO = "Serial n„o informado";
-	private static final String DESCRICAO_NAO_INFORMADA = "DescriÁ„o n„o informada";
-	private static final String DESCRICAO_TEM_MENOS_DE_10_CARACTERES = "DescriÁ„o tem menos de 10 caracteres";
-	private static final String DESCRICAO_TEM_MAIS_DE_150_CARACTERES = "DescriÁ„o tem mais de 150 caracteres";
+	private static final String SERIAL_NAO_INFORMADO = "Serial n√£o informado";
+	private static final String DESCRICAO_NAO_INFORMADA = "Descri√ß√£o n√£o informada";
+	private static final String DESCRICAO_TEM_MENOS_DE_10_CARACTERES = "Descri√ß√£o tem menos de 10 caracteres";
+	private static final String DESCRICAO_TEM_MAIS_DE_150_CARACTERES = "Descri√ß√£o tem mais de 150 caracteres";
 	private CadastroObjetos cadastroDesktop = new CadastroObjetos(Desktop.class);
 	private EquipamentoMediator mediator = EquipamentoMediator.getInstancia();
 	public TesteEquipamentoMediator() {
@@ -101,7 +101,7 @@ public class TesteEquipamentoMediator extends TesteAbstrato {
 		Assertions.assertFalse(res.isOperacaoRealizada());
 		Assertions.assertNotNull(res.getMensagensErro());
 		Assertions.assertEquals(1, res.getMensagensErro().tamanho());
-		Assertions.assertEquals("Serial do notebook j· existente", res.getMensagensErro().buscar(0));
+		Assertions.assertEquals("Serial do notebook j√° existente", res.getMensagensErro().buscar(0));
 		Assertions.assertEquals(1, obterQuantidadeRegistrosPorTipo(Notebook.class));		
 	}
 	@Test
@@ -132,7 +132,7 @@ public class TesteEquipamentoMediator extends TesteAbstrato {
 		Assertions.assertFalse(res.isOperacaoRealizada());
 		Assertions.assertNotNull(res.getMensagensErro());
 		Assertions.assertEquals(1, res.getMensagensErro().tamanho());
-		Assertions.assertEquals("Serial do desktop j· existente", res.getMensagensErro().buscar(0));
+		Assertions.assertEquals("Serial do desktop j√° existente", res.getMensagensErro().buscar(0));
 		Assertions.assertEquals(1, obterQuantidadeRegistrosPorTipo(Desktop.class));		
 	}
 	
@@ -205,7 +205,7 @@ public class TesteEquipamentoMediator extends TesteAbstrato {
 		Assertions.assertFalse(res.isOperacaoRealizada());
 		Assertions.assertNotNull(res.getMensagensErro());
 		Assertions.assertEquals(1, res.getMensagensErro().tamanho());
-		Assertions.assertEquals("Serial do desktop n„o existente", res.getMensagensErro().buscar(0));
+		Assertions.assertEquals("Serial do desktop n√£o existente", res.getMensagensErro().buscar(0));
 		Assertions.assertEquals(1, obterQuantidadeRegistrosPorTipo(Desktop.class));		
 	}
 
@@ -338,7 +338,7 @@ public class TesteEquipamentoMediator extends TesteAbstrato {
 		assertionsResultadoMediatorNaoValidado(res);
 		ListaString mensagens = res.getMensagensErro();
 		Assertions.assertEquals(1, mensagens.tamanho());
-		Assertions.assertEquals("Dados b·sicos do equipamento n„o informados", mensagens.buscar(0));
+		Assertions.assertEquals("Dados b√°sicos do equipamento n√£o informados", mensagens.buscar(0));
 		DadosEquipamento dadosEquip = new DadosEquipamento(null, null, false, 1.0);
 		res = conversor.apply(dadosEquip);
 		assertionsResultadoMediatorNaoValidado(res);		
@@ -384,7 +384,7 @@ public class TesteEquipamentoMediator extends TesteAbstrato {
 		assertionsResultadoMediatorNaoValidado(res);
 		ListaString mensagens = res.getMensagensErro();
 		Assertions.assertEquals(1, mensagens.tamanho());
-		Assertions.assertEquals("Desktop n„o informado", mensagens.buscar(0));
+		Assertions.assertEquals("Desktop n√£o informado", mensagens.buscar(0));
 		Desktop des = new Desktop(null, null, false, 1.0, true);
 		res = conversor.apply(des);
 		assertionsResultadoMediatorNaoValidado(res);		
@@ -430,7 +430,7 @@ public class TesteEquipamentoMediator extends TesteAbstrato {
 		assertionsResultadoMediatorNaoValidado(res);
 		ListaString mensagens = res.getMensagensErro();
 		Assertions.assertEquals(1, mensagens.tamanho());
-		Assertions.assertEquals("Notebook n„o informado", mensagens.buscar(0));
+		Assertions.assertEquals("Notebook n√£o informado", mensagens.buscar(0));
 		Notebook note = new Notebook(null, null, false, 1.0, true);
 		res = conversor.apply(note);
 		assertionsResultadoMediatorNaoValidado(res);		

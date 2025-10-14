@@ -17,14 +17,14 @@ public class TesteClienteMediator extends TesteAbstrato {
 	private static final String CNPJ_VALIDO = "26055259000123";
 	private static final String OUTRO_CPF_VALIDO = "61232801046";	
 	private static final String CPF_VALIDO = "07237135023";
-	private static final String CELULAR_NAO_INFORMADO_E_INDICADOR_DE_ZAP_ATIVO = "Celular n„o informado e indicador de zap ativo";
-	private static final String CELULAR_E_E_MAIL_NAO_FORAM_INFORMADOS = "Celular e e-mail n„o foram informados";
-	private static final String CPF_CNPJ_NAO_INFORMADO = "CPF/CNPJ n„o informado";
-	private static final String CPF_OU_CNPJ_COM_DIGITO_VERIFICADOR_INVALIDO = "CPF ou CNPJ com dÌgito verificador inv·lido";
-	private static final String NAO_E_CPF_NEM_CNJP = "N„o È CPF nem CNJP";
-	private static final String DATA_DO_CADASTRO_NAO_INFORMADA = "Data do cadastro n„o informada";
-	private static final String CONTATO_NAO_INFORMADO = "Contato n„o informado";
-	private static final String NOME_NAO_INFORMADO = "Nome n„o informado";	
+	private static final String CELULAR_NAO_INFORMADO_E_INDICADOR_DE_ZAP_ATIVO = "Celular n√£o informado e indicador de zap ativo";
+	private static final String CELULAR_E_E_MAIL_NAO_FORAM_INFORMADOS = "Celular e e-mail n√£o foram informados";
+	private static final String CPF_CNPJ_NAO_INFORMADO = "CPF/CNPJ n√£o informado";
+	private static final String CPF_OU_CNPJ_COM_DIGITO_VERIFICADOR_INVALIDO = "CPF ou CNPJ com digito verificador inv√°lido";
+	private static final String NAO_E_CPF_NEM_CNJP = "N√£o √© CPF nem CNJP";
+	private static final String DATA_DO_CADASTRO_NAO_INFORMADA = "Data do cadastro n√£o informada";
+	private static final String CONTATO_NAO_INFORMADO = "Contato n√£o informado";
+	private static final String NOME_NAO_INFORMADO = "Nome n√£o informado";	
 	private ClienteMediator mediator = ClienteMediator.getInstancia();
 	public TesteClienteMediator() {
 		super(Cliente.class);
@@ -112,7 +112,7 @@ public class TesteClienteMediator extends TesteAbstrato {
 		Assertions.assertFalse(res.isOperacaoRealizada());
 		Assertions.assertNotNull(res.getMensagensErro());
 		Assertions.assertEquals(1, res.getMensagensErro().tamanho());
-		Assertions.assertEquals("CPF/CNPJ j· existente", res.getMensagensErro().buscar(0));
+		Assertions.assertEquals("CPF/CNPJ j√° existente", res.getMensagensErro().buscar(0));
 		Assertions.assertEquals(1, obterQuantidadeRegistros());		
 	}
 	@Test
@@ -238,7 +238,7 @@ public class TesteClienteMediator extends TesteAbstrato {
 		assertionsResultadoMediatorNaoValidado(res);
 		ListaString mensagens = res.getMensagensErro();
 		Assertions.assertEquals(1, mensagens.tamanho());
-		Assertions.assertEquals("Cliente n„o informado", mensagens.buscar(0));
+		Assertions.assertEquals("Cliente n√£o informado", mensagens.buscar(0));
 		Cliente cliente = new Cliente(null, null, null, null);
 		res = conversor.apply(cliente);
 		assertionsResultadoMediatorNaoValidado(res);		
@@ -282,7 +282,7 @@ public class TesteClienteMediator extends TesteAbstrato {
 		Assertions.assertEquals(CPF_CNPJ_NAO_INFORMADO, mensagens.buscar(0));
 		Assertions.assertEquals(NOME_NAO_INFORMADO, mensagens.buscar(1));		
 		Assertions.assertEquals(CONTATO_NAO_INFORMADO, mensagens.buscar(2));
-		Assertions.assertEquals("Data do cadastro n„o pode ser posterior ‡ data atual", mensagens.buscar(3));				
+		Assertions.assertEquals("Data do cadastro n√£o pode ser posterior √© data atual", mensagens.buscar(3));				
 	}
 	private void wrapTesteValidarCliente05(Function<Cliente, ResultadoMediator> conversor) {
 		Cliente cliente = new Cliente(null, null, new Contato(null, null, false), null);
@@ -290,9 +290,9 @@ public class TesteClienteMediator extends TesteAbstrato {
 		cliente = new Cliente(null, null, new Contato("        ", STR_VAZIA, false), null);
 		assertionsContato(conversor, cliente, CELULAR_E_E_MAIL_NAO_FORAM_INFORMADOS);
 		cliente = new Cliente(null, null, new Contato("abc@eee.com.br", "81991888888", false), null);
-		assertionsContato(conversor, cliente, "Celular est· em um formato inv·lido");
+		assertionsContato(conversor, cliente, "Celular est√° em um formato inv√°lido");
 		cliente = new Cliente(null, null, new Contato("abc eee.com.br", "(81)991888888", false), null);
-		assertionsContato(conversor, cliente, "E-mail est· em um formato inv·lido");
+		assertionsContato(conversor, cliente, "E-mail est√° em um formato inv√°lido");
 		cliente = new Cliente(null, null, new Contato("egg@gemi.gov", null, true), null);
 		assertionsContato(conversor, cliente, CELULAR_NAO_INFORMADO_E_INDICADOR_DE_ZAP_ATIVO);
 		cliente = new Cliente(null, null, new Contato("xxx@yyy.edu.us", "   ", true), null);
@@ -305,3 +305,6 @@ public class TesteClienteMediator extends TesteAbstrato {
 	}
 	
 }
+
+
+

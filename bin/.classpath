@@ -10,5 +10,6 @@
 	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/junit-platform-console-standalone-1.10.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/PersistenciaObjetos.jar"/>
 	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/lombok-1.18.40.jar"/>
+	<classpathentry kind="lib" path="C:/Users/gabri/Downloads/swt/swt.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
