@@ -30,9 +30,6 @@ public class OrdemServico implements Serializable {
 	}
 	
 	public String getNumero() {
-		DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMyyyyddHHmm");
-		
-		String dataFormatada = this.dataHoraAbertura.format(dateTimeFormatter);
 		
 		String idTipo;
 		if (this.notebook != null) {
@@ -42,9 +39,17 @@ public class OrdemServico implements Serializable {
 		}
 		
 		if (cliente.getCpfCnpj().length() == 14) {
+			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+			
+			String dataFormatada = this.dataHoraAbertura.format(dateTimeFormatter);
 			return idTipo +  dataFormatada + this.cliente.getCpfCnpj();
 		} else {
+			DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+			
+			String dataFormatada = this.dataHoraAbertura.format(dateTimeFormatter);
 			return idTipo + dataFormatada + "000" + this.cliente.getCpfCnpj();
 		}
 	}
+	
+
 }
