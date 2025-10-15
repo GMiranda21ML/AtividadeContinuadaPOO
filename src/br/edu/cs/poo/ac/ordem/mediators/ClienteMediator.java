@@ -107,10 +107,10 @@ public class ClienteMediator {
             return "Não é CPF nem CNJP";
         }
         if (cpfCnpj.length() == 11 && !ValidadorCPFCNPJ.isCPF(cpfCnpj)) {
-            return "CPF ou CNPJ com digito verificador inválido";
+        	return "CPF ou CNPJ com dígito verificador inválido";
         }
         if (cpfCnpj.length() == 14 && !ValidadorCPFCNPJ.isCNPJ(cpfCnpj)) {
-            return "CPF ou CNPJ com digito verificador inválido";
+        	return "CPF ou CNPJ com dígito verificador inválido";
         }
         return null; 
     }
@@ -130,7 +130,7 @@ public class ClienteMediator {
             return "Data do cadastro não informada";
         }
         if (data.isAfter(LocalDate.now())) {
-            return "Data do cadastro não pode ser posterior é data atual";
+        	return "Data do cadastro não pode ser posterior à data atual";
         }
         return null;
     }
