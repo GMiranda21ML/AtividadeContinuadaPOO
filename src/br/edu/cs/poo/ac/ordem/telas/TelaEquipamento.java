@@ -17,7 +17,7 @@ import br.edu.cs.poo.ac.ordem.entidades.Notebook;
 import br.edu.cs.poo.ac.ordem.mediators.EquipamentoMediator;
 import br.edu.cs.poo.ac.ordem.mediators.ResultadoMediator;
 
-public class EquipamentoTela {
+public class TelaEquipamento {
 
 	protected Shell shell;
 	
@@ -46,7 +46,7 @@ public class EquipamentoTela {
 
 	public static void main(String[] args) {
 		try {
-			EquipamentoTela window = new EquipamentoTela();
+			TelaEquipamento window = new TelaEquipamento();
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();

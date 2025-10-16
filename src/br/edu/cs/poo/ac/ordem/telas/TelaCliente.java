@@ -21,7 +21,7 @@ import br.edu.cs.poo.ac.ordem.entidades.Contato;
 import br.edu.cs.poo.ac.ordem.mediators.ClienteMediator;
 import br.edu.cs.poo.ac.ordem.mediators.ResultadoMediator;
 
-public class ClienteTela {
+public class TelaCliente {
 
 	protected Shell shell;
 	private Text txtCPFCNPJ;
@@ -42,7 +42,7 @@ public class ClienteTela {
 
 	public static void main(String[] args) {
 		try {
-			ClienteTela window = new ClienteTela();
+			TelaCliente window = new TelaCliente();
 			window.open();
 		} catch (Exception e) {
 			e.printStackTrace();
